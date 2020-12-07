@@ -82,7 +82,7 @@ $ cd /var/www/html/
 $ composer create-project --prefer-dist yiisoft/yii2-app-basic testproject
 
 ```
-<!-- break down the command above -->
+
 The command above will install the latest version of YII in the basic directory.
 In case of an error,please refer[Troubleshooting section of th Composer Documentation](https://getcomposer.org/doc/articles/troubleshooting.md),then resume to the installation by running composer updates inside of the basic directory.
 
@@ -112,7 +112,7 @@ NB if you install yii using composer this will done automatically for you. <!-- 
 
  ### Understanding the Folder Structure and directories
  
- First, let's check what happens when we just open the advanced template in the browser. So now if you have put the advanced directory correctly into the document root, you can visit your localhost/advanced <!-- what is localhost/advanced, a link? how do you visit that? in a terminal? -->
+ First, let's check what happens when we just open the advanced template in the browser. So now if you have the advanced directory correctly in the document root, you can visit your localhost/advanced <!-- what is localhost/advanced, a link? how do you visit that? in a terminal? -->
  NB.You can rename  the `advanced` from `advanced` to any favorite name that you think about.later we will see how we rename.In our case lets rename the `advanced` from `advanced` to `test`.
 You should see the following directories on your code editor; 
 ```bash
@@ -187,42 +187,39 @@ In the MVC Pattern of coding, the C stands for Controllers. These controllers ar
 Models are the classes which contain the 'business logic'. When we say business logic it's the processing of data, manipulating the values, etc. In Yii, this directory also has classes which are a link to the Database through which we can access the database tables. These models and tables have one to one mapping.
 ## views
 Views store the files which are displayed via a browser. The data is passed from the controller in the view and then sent to the browser in HTML format. Thus separating the business logic in Models and display logic in Views. 
+## Creating views
+As mentioned before,a view is simply a PHP script mixed with HTML and PHP code.PHP generate the dynamic content,such as the page title and the form,while HTML organizes them into a HTML page.Below is code for a login form,
+```
+<?php
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
+/* @var $this yii\web\View */
+/* @var $form yii\widgets\ActiveForm */
+/* @var $model app\models\LoginForm */
+
+$this->title = 'Login';
+?>
+<h1><?= Html::encode($this->title) ?></h1>
+
+<p>Please fill out the following fields to login:</p>
+
+<?php $form = ActiveForm::begin(); ?>
+    <?= $form->field($model, 'username') ?>
+    <?= $form->field($model, 'password')->passwordInput() ?>
+    <?= Html::submitButton('Login') ?>
+<?php ActiveForm::end(); ?>
+```
 
 Inside views we have two directories;
 1. **layout**
-
-In this directory we have the files that we will always get displayed on the web page.This files are mainly the navigation bar and the footer .To prove this click either about or login and notice that it will take you to the about page and login page respectively but the entire navigation  bar will remain.
-
+Layouts are a special type of views that represent the common parts of multiple views. For example, the pages for most Web applications share the same page header and footer. 
+Instead of repeating the same page header and the footer in every view,a better way is to do this layout embed the rendering result of a content view at an appropriate place in the layout.
 The files in this directory are under main.php folder .In our case this is the codding we have under main.php;
 
-<!-- stop proving things. instead research and put down facts. your grammar needs a checkup too -->
+
 ```php
-//  <?php
-
-// /* @var $this \yii\web\View */
-// /* @var $content string */
-
-// use yii\helpers\Html;
-// use yii\bootstrap\Nav;
-// use yii\bootstrap\NavBar;
-// use yii\widgets\Breadcrumbs;
-// use frontend\assets\AppAsset;
-// use common\widgets\Alert;
-
-// AppAsset::register($this);
-// ?>
-// <?php $this->beginPage() ?>
-// <!DOCTYPE html>
-// <html lang="<?= Yii::$app->language ?>">
-// <head>
-//     <meta charset="<?= Yii::$app->charset ?>">
-//     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-//     <meta name="viewport" content="width=device-width, initial-scale=1">
-//     <?php $this->registerCsrfMetaTags() ?>
-//     <title><?= Html::encode($this->title) ?></title>
-//     <?php $this->head() ?>
-// </head>
-<body>
+---
 <?php $this->beginBody() ?>
 
 <div class="wrap">
@@ -277,24 +274,22 @@ The files in this directory are under main.php folder .In our case this is the c
 </footer>
 
 <?php $this->endBody() ?>
-</body>
-</html>
-<?php $this->endPage() ?>
+---
 
 ```
-To have the best navigation bar and the footer other than the one yii2 have provided,edit the content inside the body.For example You may modify the menuitems to customize its content  lets say services.you will do that in this part below;
-<!-- to modify, not to have the best ... -->
+To modify navigation bar and the footer other than the one yii2 have provided,edit the content inside the body.For example You may modify the menuitems to customize its content  lets say services.you will do that in this part below;
+
 ```php
  $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'About', 'url' => ['/site/about']],
 		['label' => 'Contact', 'url' => ['/site/contact']],
-		 ['label' => 'Services', 'url' => ['/site/sevices']],
+		 ['label' => 'Services', 'url' => ['/site/services']],
 ```
 
 2) Site
 As you can see above we have site/contacts,site/services etc..Its now time to see what this site is all about. <!-- reword "as you can see!" I'm blind asf -->
-When for example you click about in the navigation bar,you wil be taken to about page.The files of this page are in about.php,a folder in site directory.Therefore we can say thet site store the files which are displayed via a browser but unlike layout the files are not fixed when opened in the browser. <!--reword "when for example"-->
+When you click about in the navigation bar,you wil be taken to about page.The files of this page are in about.php,a folder in site directory.Therefore site store the files which are displayed via a browser but unlike layout the files are not fixed when opened in the browser. 
 In our case, we have the following;
 ```php
 <?php
@@ -314,10 +309,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <code><?= __FILE__ ?></code>
 </div>
 ```
-As you can see above your directed on the part to modify.This is the part that you wiil add everything that you want to be in your about page..Lets modify our about page and see what will happen. <!-- I can't see. I'm blind!. Stop seeing -->
+As you can see above your directed on the part to modify.This is the part that you will add everything that you want to be in your about page..Lets modify our about page and see what will happen. <!-- I can't see. I'm blind!. Stop seeing -->
 
 ## common
-This is a directory which is located inside test(my project name which I renamed from advanced) directory. <br>
+This is a directory which is located inside test(my project name which I renamed from advanced) directory. 
+
 Lets have a look at it.
 
 ![common](4.png)
@@ -407,14 +403,66 @@ Nb-If you don't get a congratulation note,just go back a little and follow the s
 ## Step 4 Creating our first web application using yii 
 Now that we have yii installed and working in our pc lets create our first yii frontend project.
 We will start by creating the navigation bar.In our view directory we will open main.php under layout file and  enter the following;
-```html
-      <div>
-<a style="padding-right: 20px"  href="<?= Yii::$app->urlManager->createUrl(['site/index'])?>">  Home</a>
-      <li> <a style="padding-right: 20px"  href="<?= Yii::$app->urlManager->createUrl(['site/contacts'])?>">  Contacts</a> </li>
-      <li> <a style="padding-right: 20px"  href="<?= Yii::$app->urlManager->createUrl(['site/about'])?>">  about</a> </li>
-       <li> <a style="padding-right: 20px"  href="<?= Yii::$app->urlManager->createUrl(['site/signup'])?>">  sigh up</a> </li>> nv
-        <li> <a style="padding-right: 20px"  href="<?= Yii::$app->urlManager->createUrl(['site/login'])?>">  login</a> </li>
-      <br>
+```php
+      ---
+      <body>
+<?php $this->beginBody() ?>
+
+<div class="wrap">
+    <li><a href="<?= Yii::$app->urlManager->createUrl(['site/contact'])?>">Contact</a></li>
+    <?php
+    NavBar::begin([
+        'brandLabel' => Yii::$app->name,
+        'brandUrl' => Yii::$app->homeUrl,
+        'options' => [
+            'class' => 'navbar-inverse navbar-fixed-top',
+        ],
+    ]);
+    $menuItems = [
+
+      
+        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'About', 'url' => ['/site/about']],
+        ['label' => 'Contact', 'url' => ['/site/contact']],
+    ];
+    if (Yii::$app->user->isGuest) {
+        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+    } else {
+        $menuItems[] = '<li>'
+            . Html::beginForm(['/site/logout'], 'post')
+            . Html::submitButton(
+                'Logout (' . Yii::$app->user->identity->username . ')',
+                ['class' => 'btn btn-link logout']
+            )
+            . Html::endForm()
+            . '</li>';
+    }
+    echo Nav::widget([
+        'options' => ['class' => 'navbar-nav navbar-right'],
+        'items' => $menuItems,
+    ]);
+    NavBar::end();
+    ?>
+
+    <div class="container">
+        <?= Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
+        <?= Alert::widget() ?>
+        <?= $content ?>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p>Created by "your name"</p>
+    </div>
+</footer>
+
+<?php $this->endBody() ?>
+</body>
+      ---
 ```
 In the above code we have used PHP URL manager to root.
 As we had discussed earlier about styles all your styles should be under the directory assets.You add all the css and js styles that you wish to.
@@ -436,19 +484,26 @@ In our case all the style are in css folder and that how we will be linking  the
 Now lets design the body..This will be done inside the index.php file which is in the site directory.
 This file contains the entire page of the website..
 When we modify the index.php file we will have;
-```html
-<section id="introText">
-  <div class="container">
-    <div>
-       <h3 class="panel-title" style="text-align: center"> <strong>Welcome</strong> </h3>  
-         <P>
-          Wow!Iam proud of myself,I have just created my first project using yii2.
-         </P>
-      <p> </p>
-    </div>
-   </div>
-   </section> 
+```php
+<?php
+
+/* @var $this yii\web\View */
+
+$this->title = 'My Yii Application';
+?>
+<div class="site-index">
+
+    <div class="jumbotron">
+
+        <h1>Hello World!</h1>
+        <p>My first webpage using yii2.</p>
+
+    
+</div>
+
 ```
+![hello world](2.png)
+
 ### Is framework important when codding?
 This one depends on you as an individual,some people  will prefer framework while others won't.However,I would recommend someone to use framework especially the beginners since;
 1. it is easy to install
