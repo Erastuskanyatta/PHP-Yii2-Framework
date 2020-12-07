@@ -75,8 +75,7 @@ On Windows,you'll download and run https://getcomposer.org/Composer-Setup.exe.
 
 If you encounter a problem,please refer to https://getcomposer.org/doc/articles/troubleshooting.md
 
-<!-- ## installing yii -->
-Once you have composer installed, move into the directory /var/www/html/ which will store your web applications or websites files, then install the Yii package using the composer (replace testproject with the name of your web application’s directory). 
+ have composer installed, move into the directory /var/www/html/ which will store your web applications or websites files, then install the Yii package using the composer (replace testproject with the name of your web application’s directory). 
 ```bash
 $ cd /var/www/html/
 $ composer create-project --prefer-dist yiisoft/yii2-app-basic testproject
@@ -219,7 +218,7 @@ The files in this directory are under main.php folder .In our case this is the c
 
 
 ```php
----
+//...
 <?php $this->beginBody() ?>
 
 <div class="wrap">
@@ -274,7 +273,7 @@ The files in this directory are under main.php folder .In our case this is the c
 </footer>
 
 <?php $this->endBody() ?>
----
+// ...
 
 ```
 To modify navigation bar and the footer other than the one yii2 have provided,edit the content inside the body.For example You may modify the menuitems to customize its content  lets say services.you will do that in this part below;
@@ -309,7 +308,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <code><?= __FILE__ ?></code>
 </div>
 ```
-As you can see above your directed on the part to modify.This is the part that you will add everything that you want to be in your about page..Lets modify our about page and see what will happen. <!-- I can't see. I'm blind!. Stop seeing -->
+ on the part to modify.This is the part that you will add everything that you want to be in your about page..Lets modify our about page and see what will happen. <!-- I can't see. I'm blind!. Stop seeing -->
+ on the part to modify.This is the part that you will add everything that you want to be in your about page..Lets modify our about page and see what will happen. <!-- I can't see. I'm blind!. Stop seeing -->
+ on the part to modify.This is the part that you will add everything that you want to be in your about page..Lets modify our about page and see what will happen. <!-- I can't see. I'm blind!. Stop seeing -->
 
 ## common
 This is a directory which is located inside test(my project name which I renamed from advanced) directory. 
