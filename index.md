@@ -85,8 +85,7 @@ $ composer create-project --prefer-dist yiisoft/yii2-app-basic testproject
 The command above will install the latest version of YII in the basic directory.
 In case of an error,please refer[Troubleshooting section of th Composer Documentation](https://getcomposer.org/doc/articles/troubleshooting.md),then resume to the installation by running composer updates inside of the basic directory.
 
-<!-- Once your done with installation you can rename the yii2 into your favorite name.  In this case we will rename it to test. can you show us how to do that?
-i don't think it's fine to combine project creation with installation, finish the installation then show us how to create a yii2 project!  -->
+
 ## 2. install from an archive file.
 This Involves three steps;
 
@@ -172,10 +171,10 @@ You should see the following directories on your code editor;
 	yiic.bat
 
 ```
-<!-- use tree linux program to draw the folder structure -->
+
 Here, we will cover the just the necessary directories and files. In advanced series.
 At the top level, we have four directories;
-<!-- explain each and every file and directory in here -->
+
 - backend
 While development of any web application, we have two things to be considered, the consumer/user facing side of the website and the admin panel or the dashboard.
 The backend directory serve the service of admin or the services which are restricted from the users.
@@ -619,13 +618,4 @@ This one depends on you as an individual,some people  will prefer framework whil
 
 
 
-<!--
-    Notes:
-    - Did you check your article for grammar? Because there's a lot of grammar issues in here
-    - Your links don't start with "http://" which is wrong
-    - Some of your variable names are inconsistently named. consider re-checking this
-    - This tutorial only touches on installation and modifying some files. Is there more basics that you can add or what?
-    - I didn't check code correctness. I'll do that after you make the above changes
-    - your step 4 leaves us hanging. Did you finish this article? where is the conclusions?
--->
 
