@@ -279,20 +279,9 @@ The files in this directory are under main.php folder .In our case this is the c
 // ...
 
 ```
-To modify navigation bar and the footer other than the one yii2 have provided,edit the content inside the body.For example You may modify the menuitems to customize its content  lets say services.you will do that in this part below;
-
-```php
- $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-		['label' => 'Contact', 'url' => ['/site/contact']],
-		 ['label' => 'Services', 'url' => ['/site/services']],
-```
-
 2) Site
-As you can see above we have site/contacts,site/services etc..Its now time to see what this site is all about. <!-- reword "as you can see!" I'm blind asf -->
-When you click about in the navigation bar,you wil be taken to about page.The files of this page are in about.php,a folder in site directory.Therefore site store the files which are displayed via a browser but unlike layout the files are not fixed when opened in the browser. 
-In our case, we have the following;
+Unlike files in layout,files in site are not fixed.That is,one page does not have the same view with another page.The only similar thing is the header and footer. since it was placed in main.php
+In our case, we have the following code inside about about.php files which is a file in site directory.;
 ```php
 <?php
 
@@ -311,32 +300,21 @@ $this->params['breadcrumbs'][] = $this->title;
     <code><?= __FILE__ ?></code>
 </div>
 ```
- on the part to modify.This is the part that you will add everything that you want to be in your about page..Lets modify our about page and see what will happen. <!-- I can't see. I'm blind!. Stop seeing -->
- on the part to modify.This is the part that you will add everything that you want to be in your about page..Lets modify our about page and see what will happen. <!-- I can't see. I'm blind!. Stop seeing -->
- on the part to modify.This is the part that you will add everything that you want to be in your about page..Lets modify our about page and see what will happen. <!-- I can't see. I'm blind!. Stop seeing -->
-
 ## common
-This is a directory which is located inside test(my project name which I renamed from advanced) directory. 
+In this directory we have files that are common to all application.
 
-Lets have a look at it.
+As the name suggests, the common directory has the config, models, etc. which are used in the backend and the frontend projects. For example, you can have database configuration in common/config if, both of them uses the same database. We will look at database configuration later as we move forward.
 
-![common](4.png)
+ - frontend
 
-As the name suggests, the common directory has the config, models, etc. which are used in the backend and the frontend projects. For example, you can have database configuration in common/config if, both of them uses the same database. We we look at database configuration later as we move forward.
+The frontend application provides the main interfaces to our target end users.The user interacts with the frontend but does not have access to the backend.
+Frontend has similar directories to those of backend. 
 
-1. **frontend**
-
-The frontend application which provides the main interfaces to our target end users.
-Frontend has similar directories to those of backend <!--grammar !!-->
-<!-- -console-the console application that consists of the console commands needed by the system.
--common-the directory whose content are shared among the above applications. -->
-
-In our case we will give more attention to the frontend directory. <!-- Create an app using Yii and stop modifying files without telling us what you want to achieve -->
 
 ## Database configuration
-As we had said we would look at the database configuration as we move forward.Its now the time. <!--😂😂! aty it's time? remove that! you are writing a tutorial!-->
+Let us now configure our database.
 Edit the file config/main-local.php in the Backend directory:
-You should see the following:
+Change the dbname from y112advanced to your favorite name,lets say test.You should have the following;
 
 ```php
 <?php
@@ -344,7 +322,7 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=yii2advanced',
+            'dsn' => 'mysql:host=localhost;dbname=test',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
@@ -361,16 +339,13 @@ return [
 ];
 ```
 
-NOTES:
-
-- Yii won't create the database for you, this has to be done manually before you can access it. <!-- show us how! or give us a resource on how to do the same -->
-- Check and edit the other files in the config/ directory to customize your application as required. <!--what other files?-->
-- edit this line `'dsn' => 'mysql:host=localhost;dbname=yii2advanced'`, and rename the `dbname` from `yiiadvanced` to `test`. <!--okay! where is this found? in which file?-->
-
 ## step 3  accessing the installed Yii application using a browser
-Its time to test whether the installed yii is working.You use your browser to access the installed Yii application. Open your browser and navigate http:localhost/test.
-Nb test is the name that we renamed our yii advanced name to.
-You should first see the following directory; <!--Don't put NBs, instead put block quotes eg. "> Test is the name ..." -->
+Use your browser to access the installed Yii application. Open your browser and navigate, 
+```
+http:localhost/test
+```
+Test is the name that we renamed our yiiadvanced name to.
+You should first see the following directory;
 ```bash
 Index of /test
 [ICO]	Name	Last modified	Size	Description
@@ -527,7 +502,7 @@ In our case all the style are in css folder and that how we will be linking  the
 ## Body
 Now lets modify the body.This will be done inside the index.php file which is in the site directory.
 This file contains the entire page of the website..
-When we modify the index.php file we will have the code below.We will also add a link that we take us to service page that we are going to create.
+When we modify the index.php file we will have the code below.We will also add a link that will take us to service page that we are going to create.
 ```php
 <?php
 
