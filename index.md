@@ -111,8 +111,11 @@ NB if you install yii using composer this will done automatically for you. <!-- 
 
  ### Understanding the Folder Structure and directories
  
- First, let's check what happens when we just open the advanced template in the browser. So now if you have the advanced directory correctly in the document root, you can visit your localhost/advanced <!-- what is localhost/advanced, a link? how do you visit that? in a terminal? -->
- NB.You can rename  the `advanced` from `advanced` to any favorite name that you think about.later we will see how we rename.In our case lets rename the `advanced` from `advanced` to `test`.
+ First, let's check what happens when we just open the advanced template in the browser. So now if you have the advanced directory correctly in the document root, you can  use your browser to access the following URL:
+ ```
+ http://localhost/advanced
+ ```
+ NB.You can rename  the `advanced` from `advanced` to any favorite name that you think about.later we will see how we rename.
 You should see the following directories on your code editor; 
 ```bash
 /
@@ -176,7 +179,7 @@ At the top level, we have four directories;
 - backend
 While development of any web application, we have two things to be considered, the consumer/user facing side of the website and the admin panel or the dashboard.
 The backend directory serve the service of admin or the services which are restricted from the users.
-Now lets see whats inside the backed..Click the backed is this is what you should see. <!--a little research and grammar would improve thing in here. consider looking up the folder structure from Yii2 docs or somewhere in Google -->
+Now lets see whats inside the backend.Inside backend we have the following directories. 
 ![backend](3.png)
 ## assets
 This directory consists the configurations for the assets managed in the backend project. By default, it has AppAsset.php file inside, which includes the configurations of the javascript and the css files.This is where we will adding all our css and js styles link
@@ -403,7 +406,7 @@ Nb-If you don't get a congratulation note,just go back a little and follow the s
 
 ## Step 4 Creating our first web application using yii 
 Now that we have yii installed and working in our pc lets create our first yii frontend project.
-We will start by creating the navigation bar.In our view directory we will open main.php under layout file and  enter the following;
+We will start by creating the navigation bar and the footer.In our view directory we will open main.php under layout file and  enter the following;
 ```php
       ---
       <body>
@@ -455,12 +458,52 @@ We will start by creating the navigation bar.In our view directory we will open 
     </div>
 </div>
 
+
 <footer class="footer">
     <div class="container">
-        <p>Created by "your name"</p>
-    </div>
-</footer>
+        <div class="col-md-4">
+            <div>
+            Contact Us though; <br>
+            0734568543 <br>
+            0723435678
+                
+            </div>
+        </div>
+         <div class="col-md-4">
+        <div class="w3l-title">
+       <h3  class="panel-title" >About Me</h3>
+        </div>
+        <div class="panel-body">
+         <p>Get to know me</p> <br>
+         <div class="social-icons">
+         <i class="fa-linkedin">U have a question for me?</i> <br>
+         <a href="<?= Yii::$app->urlManager->createUrl(['site/contact'])?>">Contact</a> <br>
+         <i class="fa-linkedin">My address</i> <br>
+         <p>PO.BOX 292 xxxx <br> PO.BOX 345-10100 xxx</p>
+         </div>
+         </div>  
+        </div>
+          <div class="col-md-4">
+         <h3 class=panel-title>My social media link</h3> <br>
+         <i class=""></i>
+         <a href="https://en-gb.facebook.com/">  Facebook </a><br>
+         <a href="https://www.instagram.com/">Instagram </a><br>
+         <a href="https://twitter.com/home?lang=en">Twitter  </a><br>
+         <a href="https://www.google.com/">  Google </a><br>
+         <a href="https://web.whatsapp.com/">Whatsapp </a><br>
+      </div>
+        <br> <br>
+        <div class="col-md-12">
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+              <a href="https://mdbtrap.com/"> MDBootstrap.com</a>
+            </div>
 
+        </div>
+
+    </div>
+
+  
+</footer>
 <?php $this->endBody() ?>
 </body>
       ---
@@ -482,10 +525,12 @@ As we had discussed earlier about styles all your styles should be under the dir
 In our case all the style are in css folder and that how we will be linking  them.
 
 ## Body
-Now lets design the body..This will be done inside the index.php file which is in the site directory.
+Now lets modify the body.This will be done inside the index.php file which is in the site directory.
 This file contains the entire page of the website..
-When we modify the index.php file we will have;
+When we modify the index.php file we will have the code below.We will also add a link that we take us to service page that we are going to create.
 ```php
+<?php
+
 <?php
 
 /* @var $this yii\web\View */
@@ -496,14 +541,92 @@ $this->title = 'My Yii Application';
 
     <div class="jumbotron">
 
-        <h1>Hello World!</h1>
+       <h1>Hello World!</h1>
         <p>My first webpage using yii2.</p>
-
+         <h2>Click here <a href="<?= Yii::$app->urlManager->createUrl(['site/portfolio'])?>">Portfolio </a>to go to the portfolio page. </h2>
     
 </div>
 
 ```
+Now lets create a view page called service page.To create a page, we
+must create a view and  an action.
+Inside views/site folder create a file called services.php.To do this,right click on site to create a new file(services.php) with the following code:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio</title>
+</head>
+<body>
+     <h1 style="text-align: center">This is the portfolio page that we have created.</h1>
+     <div class="container">
+     	<div class="col-sm-4">
+     		<div class="title">
+     			<h6>About Me</h6>
+     		</div>
+     		<div>Iam a student.</div>
+     	</div>
+     	<div class="col-sm-4">
+     		<div class="title">
+     			<h6>My contact</h6>
+     		</div>
+     		<div>xxxxxxxx.</div>
+     	</div>
+     	<div class="col-sm-4">
+     		<div class="title">
+     			<h6>Services</h6>
+     		</div>
+     		<div>I write articles at an affordable price.</div>
+     	</div>
+     </div>
+     
+</body>
+</html>
+```
+Now that we have created a view,lets create an action.
+
+Actions are the objects that end users can directly refer to for execution. Actions are grouped by controllers. The execution result of an action is the response that an end user will receive.
+
+Declare the services action in the existing SiteController, which is defined in the class file
+controllers/SiteController.php.
+```php
+<?php
+namespace frontend\controllers;
+
+use frontend\models\ResendVerificationEmailForm;
+use frontend\models\VerifyEmailForm;
+use Yii;
+use yii\base\InvalidArgumentException;
+use yii\web\BadRequestHttpException;
+use yii\web\Controller;
+use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+use common\models\LoginForm;
+use frontend\models\PasswordResetRequestForm;
+use frontend\models\ResetPasswordForm;
+use frontend\models\SignupForm;
+use frontend\models\ContactForm;
+
+/**
+     * Display portfolio  page
+     * 
+     * @return mixed
+     */
+    public function actionPortfolio()
+     {
+         $this->layout='main';
+         return $this->render('portfolio');
+
+    }
+    // ...
+```
+After creating the action and the view, you may access the new page by clicking on the portfolio link that is on the main page and your browser should display an image similar to the one below;
 ![hello world](2.png)
+
+In Yii, all action methods are prefixed with the word action. This is how the framework differentiates action methods from non-action ones. If an action ID requires multiple words, then they will be concatenated by
+dashes.
+
+To add any other page in yii follow the same same steps above and you will be done.
 
 ### Is framework important when codding?
 This one depends on you as an individual,some people  will prefer framework while others won't.However,I would recommend someone to use framework especially the beginners since;
