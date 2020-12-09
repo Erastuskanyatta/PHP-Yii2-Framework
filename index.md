@@ -54,8 +54,8 @@ To follow along with this tutorial,you need to;
 - install a code editor like sublime or vscode.feel free to use any other. 
 - install yii2.Procedures of installing are well described in this article.
 - have some knowledge of html and css 
--knowledge of OOP (Object oriented programming). This means classes, overriding functions, using constructor, public and private methods and properties.
-- be familiar with PHP and databases (DB) .
+- have knowledge of OOP (Object oriented programming). This means classes, overriding functions, using constructor, public and private methods and properties.
+- be familiar with databases (DB) .
 - have Web server supports PHP 5.6.0.Yii2 is a PHP( server side scripting language) framework therefore it require a web server support.
  
 ## step 1- install yii2
@@ -380,7 +380,7 @@ Nb-If you don't get a congratulation note,just go back a little and follow the s
 
 ## Step 4 Creating our first web application using yii 
 Now that we have yii installed and working in our pc lets create our first yii frontend project.
-We will start by creating the navigation bar and the footer.In our view directory we will open main.php under layout file and  enter the following;
+We will start by creating the navigation bar and the footer. In our view directory we will open main.php under layout file and  enter the following;
 ```php
       ---
       <body>
@@ -523,9 +523,9 @@ $this->title = 'My Yii Application';
 </div>
 
 ```
-Now lets create a view page called service page.To create a page, we
+Now lets create a view page called portfolio page.To create a page, we
 must create a view and  an action.
-Inside views/site folder create a file called services.php.To do this,right click on site to create a new file(services.php) with the following code:
+Inside views/site folder create a file called portfolio.php.To do this,right click on site to create a new file(portfolio.php) with the following code:
 ```html
 <!DOCTYPE html>
 <html>
@@ -611,11 +611,14 @@ This one depends on you as an individual,some people  will prefer framework whil
 
 
 ### conclusion
-    Like any other good framework,Yii help you create modern web application quickly and make sure they
-    perform well.It pushes you to create securable and testable site by doing a lot of the heavy lifting for you.
-    I really encourage you to check it out for the next web project..
+Like any other good framework,Yii help you create modern web application quickly and make sure they perform well.It pushes you to create securable and testable site by doing a lot of the heavy lifting for you.
+I really encourage you to check it out for the next web project..
+In this article;
+- we have installed yii2 framework.
+- we have looked at yii2 directories.
+- we have created a simple webpage using yii2 framework.
 
-    Have You tried yii2??Why not?Try today!
+Have You tried yii2??Why not?Try today!
 
 
 
