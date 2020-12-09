@@ -483,6 +483,7 @@ We will start by creating the navigation bar and the footer.In our view director
       ---
 ```
 In the above code we have used PHP URL manager to root.
+
 As we had discussed earlier about styles all your styles should be under the directory assets.You add all the css and js styles that you wish to.
 ```css
 {
@@ -561,7 +562,7 @@ Now that we have created a view,lets create an action.
 
 Actions are the objects that end users can directly refer to for execution. Actions are grouped by controllers. The execution result of an action is the response that an end user will receive.
 
-Declare the services action in the existing SiteController, which is defined in the class file
+Declare the portfolio action in the existing SiteController, which is defined in the class file
 controllers/SiteController.php.
 ```php
 <?php
