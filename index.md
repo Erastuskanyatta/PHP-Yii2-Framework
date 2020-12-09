@@ -176,7 +176,8 @@ Here, we will cover the just the necessary directories and files. In advanced se
 At the top level, we have four directories;
 
 - backend
-While development of any web application, we have two things to be considered, the consumer/user facing side of the website and the admin panel or the dashboard.
+
+In the development of any web application, we have two things to be considered, the consumer/user facing side of the website and the admin panel or the dashboard.
 The backend directory serve the service of admin or the services which are restricted from the users.
 Now lets see whats inside the backend.Inside backend we have the following directories. 
 ![backend](3.png)
@@ -280,7 +281,7 @@ The files in this directory are under main.php folder .In our case this is the c
 ```
 2) Site
 Unlike files in layout,files in site are not fixed.That is,one page does not have the same view with another page.The only similar thing is the header and footer. since it was placed in main.php
-In our case, we have the following code inside about about.php files which is a file in site directory.;
+In our case, we have the following code inside  about.php files which is a file in site directory.;
 ```php
 <?php
 
@@ -304,7 +305,7 @@ In this directory we have files that are common to all application.
 
 As the name suggests, the common directory has the config, models, etc. which are used in the backend and the frontend projects. For example, you can have database configuration in common/config if, both of them uses the same database. We will look at database configuration later as we move forward.
 
- - frontend
+- frontend
 
 The frontend application provides the main interfaces to our target end users.The user interacts with the frontend but does not have access to the backend.
 Frontend has similar directories to those of backend. 
