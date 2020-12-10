@@ -617,7 +617,7 @@ I really encourage you to check it out for the next web project..
 In this article;
 - we have installed yii2 framework.
 - we have looked at yii2 directories.
-- we have created a simple webpage using yii2 framework.
+- we have created a portfolio page using yii2.
 
 Have You tried yii2??Why not?Try today!
 
