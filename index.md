@@ -107,7 +107,6 @@ The `frontend` project provides the main interfaces to users.The user only inter
 
 ## step 3  accessing the installed Yii application using a browser
 Use your browser to access the installed Yii application. Open your browser and navigate, http://localhost/advanced
-Test is the name that we renamed our yiiadvanced name to.
 You should first see the following directory;
 ```bash
 Index of /test
