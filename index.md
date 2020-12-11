@@ -1,349 +1,112 @@
-## Php yii2 Web Application framework.
+## Getting started with Yii 2 PHP Web framework.
  
-Nowadays,many people has turned out to use framework in web designing and apps development. This has played a great role in improving developers codding skill since they done have to have the whole knowledge of a language so as to use it.
-PHP is an acronym for "PHP: Hypertext Preprocessor".It is a server side scripting language that is embedded in HTML. It is used to manage dynamic content, databases, session tracking, even build entire e-commerce sites.
-It is integrated with a number of popular databases, including MySQL, PostgreSQL,
-Oracle, Sybase, Informix, and Microsoft SQL Server.
-takeaway
+Nowadays,many people have turned to using frameworks in designing web apps. This has led to improved production speeds. PHP is a general-purpose scripting language especially used in web development. It is a server side scripting language that is embedded in [HTML](https://en.wikipedia.org/wiki/HTML). It is used in managing dynamic content, databases and session tracking.
+It can be integrated with databases like MySQL, PostgreSQL and Mongodb.
+
 ## Introduction
-Yii is a generic Web programming framework best for developing complex Web applications with multiple ties.
-It is used together with database.When developing webs with yii2, you need to be familia with php classes and objects.
-Like other PHP frameworks,Yii implements the MVC (Model-View-Controller) . 
+Yii 2 is a generic web programming framework used for developing web applications with multiple ties. It can be used together with a database. 
+Like other PHP frameworks,Yii implements the MVC (Model, View and Controller).
 
-MVC aims to separate business logic from user interface considerations, so that developers can more easily change each part without affecting the other. 
+MVC aims to separate business logic from user interface considerations, so that developers can more easily change each part without affecting the other. To learn more on MVC click [here](https://www.guru99.com/php-mvc-frameworks.html).
 
-    1 Model
-     Models represent the information (data) and the business rules.They are often shared among different sub-applications of a Web application. For example, a LoginForm model may be used by both the front end and the back end of an application.
-     Models should;
+## Prerequisites
+To follow along with this tutorial,you are required to have the following: 
+- a code editor like [Visual Studio Code](https://code.visualstudio.com/download)
+- knowledge of HTML and CSS
+- Apache web server. You can get it [here](https://www.apachefriends.org/download.html).
 
-     - contain properties to represent specific data.
+## step 1 -- install yii2
+Yii 2 can be installed from an archive file.
 
-     - contain business logic(eg validation riles)to ensure the represented data fulfills the design requirement.
-     
-     - avoid direct access to $_GET, $_POST, or other similar variables that represent the end user request.
-
-     2 Views
-     Views are responsible in representing models in the format that end users desire.
-
-     Views should;
-     -  mainly contain presentational code, such as HTML, and simple PHP code to traverse, format and render data.
-     - avoid containing code that performs explicit DB queries. Such code is better placed in models.
-     - avoid direct access to $_GET, $_POST, or other similar variables that represent the end user request.
-
-     3 Controller
-     (link(Controller[https://www.yiiframework.com/doc/guide/1.1/en/basics.controller])) binds models,views and other components together into a runnable application.RThey are responsible for dealing with directly with end user request. Therefore,controllers
-
-     - may access $_GET, $_POST and other PHP variables that represent user requests;
-
-     - should avoid containing any HTML or any other presentational markup. This is kept in views.
-
-     - may create model instances and manage their life cycles. For example, in a typical model update action, the controller may first create the model instance; then populate the model with the user input from $_POST; after saving the model successfully, the controller may redirect the user browser to the model detail page.
-
-It include three tiers:frontend,backend and console, each of which is a separate Yii console.
-
-- front end: it is a public-facing website for normal end users.
-
-- back end: it exposes administrative functionality for managing the application. It is restricted to administrative staff.
-
-- console: an application consisting of console commands to be run in a terminal window or as scheduled jobs to support the whole application.
-
-In this article we are going to focuses on frontend. 
-
-## Requirements
-To follow along with this tutorial,you need to; 
-- install a code editor like sublime or vscode.feel free to use any other. 
-- install yii2.Procedures of installing are well described in this article.
-- have some knowledge of html and css 
-- have knowledge of OOP (Object oriented programming). This means classes, overriding functions, using constructor, public and private methods and properties.
-- be familiar with databases (DB) .
-- have Web server supports PHP 5.6.0.Yii2 is a PHP( server side scripting language) framework therefore it require a web server support.
- 
-## step 1- install yii2
-Yii is installed in two ways, using the Composer package manager or by installing it from an archive file. The former is the recommended way, as it enables you to install new extensions or update Yii by a single command.
-
-## 1. install via composer
-If you do not have a composer with you in your PC you may install it by following the instruction at https://getcomposer.org/download/.
-On linux and Mac OS X, you will run the following commands:
-
-```bash
-$ curl -sS https://getcomposer.org/installer | php
-$ sudo mv composer.phar /usr/local/bin/composer
-$ sudo chmod +x /usr/local/bin/composer
-```
-
-On Windows,you'll download and run https://getcomposer.org/Composer-Setup.exe.
-
-If you encounter a problem,please refer to https://getcomposer.org/doc/articles/troubleshooting.md
-
- have composer installed, move into the directory /var/www/html/ which will store your web applications or websites files, then install the Yii package using the composer (replace testproject with the name of your web application’s directory). 
-```bash
-$ cd /var/www/html/
-$ composer create-project --prefer-dist yiisoft/yii2-app-basic testproject
-
-```
-
-The command above will install the latest version of YII in the basic directory.
-In case of an error,please refer[Troubleshooting section of th Composer Documentation](https://getcomposer.org/doc/articles/troubleshooting.md),then resume to the installation by running composer updates inside of the basic directory.
-
-
-## 2. install from an archive file.
 This Involves three steps;
 
 1.Download the archive file from [yiiframeworks.com](https://www.yiiframework.com/download).
 
-2.Unpack the download file to a web-accessible folder. <!-- what is a web accessible folder? -->
+2.Unpack the download file to a web-accessible folder. 
 
 3.Modify the config/web.php file by entering a secret key for the cookieValidationkey configuration item.
-<!-- if cookieValidationkey is a name then put it under some code blocks -->
-NB if you install yii using composer this will done automatically for you. <!-- specify what "this" stands for -->
+
+
 ```php
 // !!! insert a secret key in the following(if it is empty) - this is required by cookie validation
-'cookieValidationKey' =>'enter you secret key here',
+'cookieValidationKey' =>'secret',
 ```
- ## step2 verify the installation
- At this point, you are ready to start using the Yii framework for development. 
- After your done with the installation,you can either configure your web server or use the build in server[bult-in-web server](https://www.php.net/manual/en/features.commandline.webserver.php)by running the following command in you terminal while in the project directory .
- 
- ```bash
- $ php yii serve
- ```
-
- ### Understanding the Folder Structure and directories
- 
- First, let's check what happens when we just open the advanced template in the browser. So now if you have the advanced directory correctly in the document root, you can  use your browser to access the following URL:
- ```
- http://localhost/advanced
- ```
- NB.You can rename  the `advanced` from `advanced` to any favorite name that you think about.later we will see how we rename.
-You should see the following directories on your code editor; 
 ```bash
-/
-	backend/
-	common/
-		components/
-		config/
-			params.php
-			params-local.php *
-		lib/
-			Pear/
-			yii/
-			Zend/
-		migrations/
-		models/
-			Comment.php
-			Extension.php
-			...
-	console/
-		commands/
-			SitemapCommand.php
-			...
-		config/
-			main.php
-			main-local.php *
-			params.php
-			params-local.php *
-		runtime/
-		yiic.php *
-	frontend/
-		components/
-		config/
-			main.php
-			main-local.php *
-			params.php
-			params-local.php *
-		controllers/
-			SiteController.php
-			...
-		lib/
-		models/	
-			ContactForm.php
-			SearchForm.php		
-		runtime/
-		views/
-			layouts/
-			site/
-		www/
-			assets/
-			css/
-			js/
-			index.php *
-	yiic
-	yiic.bat
+sudo apt install php-gd
 
+sudo service apache2 restart
 ```
+Then test your web app using the in-built web server by running the following command in a terminal: 
+```bash
+$ php yii serve
+```
+You can also learn how to configure your web server [here](https://www.php.net/manual/en/features.commandline.webserver.php).
+<!-- At this point, you are ready to start using the Yii framework for development. 
+ After your done with the installation,you can configure your web server or use the build in server [bult-in-web server](https://www.php.net/manual/en/features.commandline.webserver.php) by running the following command in your terminal while in the project directory . -->
+ 
 
-Here, we will cover the just the necessary directories and files. In advanced series.
-At the top level, we have four directories;
+### Understanding the Folder Structure and directories
+Inside the `advanced` folder,we have the following folder structure:
+```bash
+.
+├── backend
+├── codeception.yml
+├── common
+├── composer.json
+├── composer.lock
+├── console
+├── docker-compose.yml
+├── environments
+├── frontend
+├── init
+├── init.bat
+├── LICENSE.md
+├── README.md
+├── requirements.php
+├── vagrant
+├── Vagrantfile
+├── vendor
+└── yii.bat
+```
+In this `advanced` folder, we have three main directories:
+1. backend
+2. console
+3. frontend
 
-- backend
-
-In the development of any web application, we have two things to be considered, the consumer/user facing side of the website and the admin panel or the dashboard.
-The backend directory serve the service of admin or the services which are restricted from the users.
-Now lets see whats inside the backend.Inside backend we have the following directories. 
+Let us look at the work of the above folders:
+### Folder 1. backend
+In web application, we consider two things, the user facing side of the website and the admin panel which is the backend part. The backend directory serves the admin services which are restricted from the users.
+Inside this `backend` folder, we have the following main directories.
 ![backend](3.png)
-## assets
-This directory consists the configurations for the assets managed in the backend project. By default, it has AppAsset.php file inside, which includes the configurations of the javascript and the css files.This is where we will adding all our css and js styles link
-## controllers
-In the MVC Pattern of coding, the C stands for Controllers. These controllers are present in the controller's directory. Yii follows the convention of <NameController> for naming the controllers. Example, UserController.php is the name of the file and the class is UserController.
-## models
+### assets
+This directory consists of assets configurations. By default, it has an `AppAsset.php` file, which includes the configurations of the javascript and the css files. This is where we will be adding our CSS and JavaScript files.
+### controllers
+Yii 2 contollers are written in this folder. Yii 2 follows the convention of <NameController> for naming the controllers. Example, `UserController.php` is the name of the file containing `User` controllers.
+
+### models
 Models are the classes which contain the 'business logic'. When we say business logic it's the processing of data, manipulating the values, etc. In Yii, this directory also has classes which are a link to the Database through which we can access the database tables. These models and tables have one to one mapping.
-## views
-Views store the files which are displayed via a browser. The data is passed from the controller in the view and then sent to the browser in HTML format. Thus separating the business logic in Models and display logic in Views. 
-## Creating views
-As mentioned before,a view is simply a PHP script mixed with HTML and PHP code.PHP generate the dynamic content,such as the page title and the form,while HTML organizes them into a HTML page.Below is code for a login form,
-```
-<?php
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+### views
+Views store the files that are displayed via a browser. The data to be placed is passed from the controler in the view and then sent to the browser as HTML. 
 
-/* @var $this yii\web\View */
-/* @var $form yii\widgets\ActiveForm */
-/* @var $model app\models\LoginForm */
+Inside views we have two directories:
+### 1. layout
 
-$this->title = 'Login';
-?>
-<h1><?= Html::encode($this->title) ?></h1>
-
-<p>Please fill out the following fields to login:</p>
-
-<?php $form = ActiveForm::begin(); ?>
-    <?= $form->field($model, 'username') ?>
-    <?= $form->field($model, 'password')->passwordInput() ?>
-    <?= Html::submitButton('Login') ?>
-<?php ActiveForm::end(); ?>
-```
-
-Inside views we have two directories;
-1. **layout**
 Layouts are a special type of views that represent the common parts of multiple views. For example, the pages for most Web applications share the same page header and footer. 
-Instead of repeating the same page header and the footer in every view,a better way is to do this layout embed the rendering result of a content view at an appropriate place in the layout.
-The files in this directory are under main.php folder .In our case this is the codding we have under main.php;
+Instead of repeating the same page header and the footer in every view,a better way is to do this layout embed the rendering result of a content view at an appropriate place in the layout. The files in this directory are under `main.php` folder.
 
+### 2. Site
 
-```php
-//...
-<?php $this->beginBody() ?>
+Unlike files in layout,files in site are not fixed.That is,one page does not have the same view with another page.The only similar thing is the header and the footer since it was placed in `main.php`.
 
-<div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    ?>
+### 3. common
+In this directory we have configurations which used in the backend and the frontend projects. For example, you can have database configuration in common/config if, both of them uses the same database.
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    </div>
-</div>
+### Folder 2: frontend
 
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
-
-<?php $this->endBody() ?>
-// ...
-
-```
-2) Site
-Unlike files in layout,files in site are not fixed.That is,one page does not have the same view with another page.The only similar thing is the header and footer. since it was placed in main.php
-In our case, we have the following code inside  about.php files which is a file in site directory.;
-```php
-<?php
-
-/* @var $this yii\web\View */
-
-use yii\helpers\Html;
-
-$this->title = 'About';
-$this->params['breadcrumbs'][] = $this->title;
-?>
-<div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>This is the About page. You may modify the following file to customize its content:</p>
-
-    <code><?= __FILE__ ?></code>
-</div>
-```
-## common
-In this directory we have files that are common to all application.
-
-As the name suggests, the common directory has the config, models, etc. which are used in the backend and the frontend projects. For example, you can have database configuration in common/config if, both of them uses the same database. We will look at database configuration later as we move forward.
-
-- frontend
-
-The frontend application provides the main interfaces to our target end users.The user interacts with the frontend but does not have access to the backend.
-Frontend has similar directories to those of backend. 
-
-
-## Database configuration
-Let us now configure our database.
-Edit the file config/main-local.php in the Backend directory:
-Change the dbname from y112advanced to your favorite name,lets say test.You should have the following;
-
-```php
-<?php
-return [
-    'components' => [
-        'db' => [
-            'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=test',
-            'username' => 'root',
-            'password' => '',
-            'charset' => 'utf8',
-        ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            'viewPath' => '@common/mail',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => true,
-        ],
-    ],
-];
-```
+The `frontend` project provides the main interfaces to users.The user only interacts with the frontend. This folder has similar directories to those of `backend`. 
 
 ## step 3  accessing the installed Yii application using a browser
-Use your browser to access the installed Yii application. Open your browser and navigate, 
-```
-http:localhost/test
-```
+Use your browser to access the installed Yii application. Open your browser and navigate, http://localhost/advanced
 Test is the name that we renamed our yiiadvanced name to.
 You should first see the following directory;
 ```bash
@@ -376,12 +139,11 @@ Inside frontend directory click the web directory and if the installation was su
 ![A congratulatory note](congratulations.png)
 
 
-## Congratulation for creating your first yii program.
-Nb-If you don't get a congratulation note,just go back a little and follow the steps. 
+## Congratulation for creating your first Yii program.
+If you don't get a congratulation note,just go back a little and follow the steps. 
 
 ## Step 4 Creating our first web application using yii 
-Now that we have yii installed and working in our pc lets create our first yii frontend project.
-We will start by creating the navigation bar and the footer. In our view directory we will open main.php under layout file and  enter the following;
+Now that we have yii installed and working in our pc lets create our first yii frontend project. We will start by creating the navigation bar and the footer. In our `view` directory we will open `main.php` under layout file and  enter the following:
 ```php
       ---
       <body>
@@ -483,9 +245,9 @@ We will start by creating the navigation bar and the footer. In our view directo
 </body>
       ---
 ```
-In the above code we have used PHP URL manager to root.
+In the above code we have used PHP URL manager to route.
 
-As we had discussed earlier about styles all your styles should be under the directory assets.You add all the css and js styles that you wish to.
+You should add all the CSS and JavaScript files in the assets directory as shown below: 
 ```css
 {
     public $basePath = '@webroot';
@@ -501,8 +263,7 @@ As we had discussed earlier about styles all your styles should be under the dir
 In our case all the style are in css folder and that how we will be linking  them.
 
 ## Body
-Now lets modify the body.This will be done inside the index.php file which is in the site directory.
-This file contains the entire page of the website..
+Now lets modify the body.This will be done inside the `index.php` file which is in the site directory. This file contains the entire page of the website..
 When we modify the index.php file we will have the code below.We will also add a link that will take us to service page that we are going to create.
 ```php
 <?php
@@ -620,7 +381,3 @@ In this article;
 - we have created a portfolio page using yii2.
 
 Have You tried yii2??Why not?Try today!
-
-
-
-
