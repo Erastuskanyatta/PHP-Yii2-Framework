@@ -241,11 +241,12 @@ You should have a page similar to the one below;
 In Yii, all action methods are prefixed with the word action. This is how the framework differentiates action methods from non-action ones. If an action ID requires multiple words, then they will be concatenated by dashes.
 
 ### conclusion
-Like any other good framework,Yii help you create modern web application quickly and make sure they perform well.It pushes you to create securable and testable site by doing a lot of the heavy lifting for you.
-I really encourage you to check it out for the next web project..
+Congratulations! Now you have a better understanding of the basics of Yii 2 framework.
+Yii 2 pushes you to create securable and testable site by doing a lot of the heavy lifting for you.
+I really encourage you to use Yii 2 in your next project..
 In this article;
 - we have installed yii2 framework.
 - we have looked at yii2 directories.
 - we have created a portfolio page using yii2.
 
-Have You tried yii2??Why not?Try today!
+**Have a good Yii 2 coding ahead**
