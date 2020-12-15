@@ -1,6 +1,6 @@
 ## Getting started with Yii 2 PHP Web framework.
  
-Nowadays, many developers have turned to use frameworks in designing websites. This has led to improved production speeds. PHP is a general-purpose scripting language used in web development. It is a server-side scripting language that is embedded in [HTML](https://en.wikipedia.org/wiki/HTML). It is used in managing dynamic content, databases and, session tracking. It can be integrated with databases like MySQL, PostgreSQL and, Mongodb to store user data.
+Nowadays, many developers have turned to use frameworks in designing websites. This has led to improved production speeds. PHP is a general-purpose scripting language used in web development. It is a server-side scripting language that is embedded in [HTML](https://en.wikipedia.org/wiki/HTML). It is used in managing dynamic content, databases, and session tracking. It can be integrated with databases like MySQL, PostgreSQL, and MongoDB to store user data.
 
 ## Introduction
 Yii 2 is a generic PHP framework used for developing web applications with multiple ties. Like other PHP frameworks, Yii 2 implements the MVC (Model, View, and Controller) development principle.
@@ -37,7 +37,7 @@ For assistance with extracting tarball archives, click [here](https://askubuntu.
 $ PHP init
 ```
 Then you will be asked which environment you want the application to be initialized in.
-Select 0 (Development) ,then click Enter. It will again ask you for Yes/No.Type yes and click enter.
+Select 0 (Development) ,then click Enter. It will again ask you for Yes/No. Type yes and click enter.
 
 Now You are done with installation of Yii 2 Advanced Template. Open your browser and navigate, http://localhost/advanced/frontend/web to test it.
 
@@ -84,10 +84,10 @@ Inside this `backend` folder, we have the following main directories.
 **`/assets`**: This directory consists of asset configurations. By default, it has an `AppAsset.php` file, which includes the configurations of the JAVASCRIPT and the CSS files. This is where we will be adding our CSS and JAVASCRIPT files.
 
 
-**`/controllers`**: Yii 2 controller's are written in this folder. Yii 2 follows the convention of <NameController> for naming the controllers. For example, `UserController.php` is the name of the file containing `User` controllers.
+**`/controllers`**: Yii 2 Controller's are written in this folder. Yii 2 follows the convention of <NameController> for naming the controllers. For example, `UserController.php` is the name of the file containing `User` controllers.
 
 
-**`/models`**: Models are the classes which contains the 'business logic'. When we say business logic it's the processing of data, manipulating the values, etc. In Yii 2, this directory also has classes which are a link to the database through which we can access the database tables. These models and tables have one to one mapping.
+**`/models`**: Models are the classes containing the 'business logic'. When we say business logic it's the processing of data, manipulating the values, etc. In Yii 2, this directory also has classes which are a link to the database through which we can access the database tables. These models and tables have one to one mapping.
 
 **`/views`**: Views store the files that are displayed via a browser. The data to be placed is passed from the controller in the view and then sent to the browser as HTML. 
 
@@ -96,7 +96,7 @@ Inside view we have two directories:
 - **`views/layout`**: Layouts are a special type of view that represents the common parts of multiple views. For example, the pages for most Web applications share the same page header and footer. 
 Instead of repeating the same page header and the footer in every view, a better way is to do this layout embed the rendering result of a content view at an appropriate place in the layout. The files in this directory are under `main.php` folder.
 
-- **`views/site`**: Unlike files in layout, files in site are not fixed. That is, one page does not have the same view to another page. The only similar thing is the header and the footer since they were placed in `main.php`.
+- **`views/site`**: Unlike files in layout, files in site are not fixed. That is, one page does not have the same view with another page. The only similar thing is the header and the footer since they were placed in `main.php`.
 
 ### Folder 2: common
 In this directory, we have configurations that are used in the backend and the frontend projects. For example, you can have database configurations in `/common/config`.
