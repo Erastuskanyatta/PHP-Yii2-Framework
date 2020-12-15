@@ -89,17 +89,18 @@ Inside this `backend` folder, we have the following main directories.
 **`/models`**: In Yii 2, processing of data, and manipulating the values takes place here. In this directory we have classes that link to the databases hence accessing the database tables. Tables in databases and the models has one to one mapping.
 
 
-**`/views`**: Views store the files that are displayed via a browser. The data to be placed is passed from the controller in the view and then sent to the browser as HTML. 
+**`/views`**: In Yii 2, views directory is used to store files that will be displayed in the browser as HTML. The code placed in this directory is always in PHP format but displayed in tha browser in HTML format.
 
 Inside view we have two directories:
 
-- **`views/layout`**: Layouts are a special type of view that represents the common parts of multiple views. For example, the pages for most Web applications share the same page header and footer. 
-Instead of repeating the same page header and the footer in every view, a better way is to do this layout embed the rendering result of a content view at an appropriate place in the layout. The files in this directory are under `main.php` folder.
+- **`views/layout`**: Layout directory contains the views that are fixed in the browser. These views get displayed in all pages of the website. The files in this folder are under `main.php`. For instance, page header and the footer files are in this directory hence all pages in that web contains the same page header and footer view.
+<!-- Layouts are a special type of view that represents the common parts of multiple views. For example, the pages for most Web applications share the same page header and footer. 
+Instead of repeating the same page header and the footer in every view, a better way is to do this layout embed the rendering result of a content view at an appropriate place in the layout. The files in this directory are under `main.php` folder. -->
 
 - **`views/site`**: Unlike files in layout, files in site are not fixed. That is, one page does not have the same view with another page. The only similar thing is the header and the footer since they were placed in `main.php`.
 
 ### Folder 2: common
-In this directory, we have configurations that are used in the backend and the frontend projects. For example, you can have database configurations in `/common/config`.
+In this directory, we have configurations that are used in the backend and the frontend projects. For instance, database configurations in `/common/config` takes place here.
 
 ### Folder 3: frontend
 
