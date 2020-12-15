@@ -38,9 +38,9 @@ $ PHP init
 Then you will be asked which environment you want the application to be initialized in.
 Select 0 (Development) ,then click Enter. It will again ask you for Yes/No. Type yes and click enter.
 
-Now You are done with installation of Yii 2 Advanced Template. Open your browser and navigate, http://localhost/advanced/frontend/web to test it.
+At this point, you have installed  Yii 2 Advanced Template. Open your browser and navigate, http://localhost/advanced/frontend/web to test it.
 
-If the installation was successful you should see the Congratulations! page in your browser.
+If you see the Congratulations! page in your browser, it means that the installation was successful.
 
 ![A congratulatory note](congratulations.png)
 
@@ -80,13 +80,14 @@ The backend directory serves the admin services which are restricted from the us
 Inside this `backend` folder, we have the following main directories.
 
 
-**`/assets`**: This directory consists of asset configurations. By default, it has an `AppAsset.php` file, which includes the configurations of the JAVASCRIPT and the CSS files. This is where we will be adding our CSS and JAVASCRIPT files.
+**`/assets`**: This directory consists of asset configurations. It has an `AppAsset.php` file, which contains the configurations of the CSS and the JAVASCRIPT. This is where we will be adding our CSS and JAVASCRIPT files.
 
 
-**`/controllers`**: Yii 2 Controller's are written in this folder. Yii 2 follows the convention of <NameController> for naming the controllers. For example, `UserController.php` is the name of the file containing `User` controllers.
+**`/controllers`**: Yii 2 Controller's are written in this folder. Yii 2 takes the convention of <NameController> to name the controllers. For example, `UserController.php` is the name of the file containing `User` controllers.
 
 
-**`/models`**: Models are the classes containing the 'business logic'. When we say business logic it's the processing of data, manipulating the values, etc. In Yii 2, this directory also has classes which are a link to the database through which we can access the database tables. These models and tables have one to one mapping.
+**`/models`**: In Yii 2, processing of data, and manipulating the values takes place here. In this directory we have classes that link to the databases hence accessing the database tables. Tables in databases and the models has one to one mapping.
+
 
 **`/views`**: Views store the files that are displayed via a browser. The data to be placed is passed from the controller in the view and then sent to the browser as HTML. 
 
