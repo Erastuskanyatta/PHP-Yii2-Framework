@@ -1,3 +1,4 @@
+
 ## Getting started with Yii 2 PHP Web framework.
  
 Nowadays, many developers have turned to use frameworks in designing websites. This has led to improved production speeds. PHP is a scripting language used in web development. It is a server-side scripting language that is embedded in [HTML](https://en.wikipedia.org/wiki/HTML). It is used in managing dynamic content, databases, and session tracking. It can be integrated with databases like MySQL, PostgreSQL, and MongoDB to store user data.
@@ -211,7 +212,7 @@ To add a new page to our website, we need to create a view and an action. A view
 </body>
 </html>
 ```
-For the above view code to work, we need to create an action. Actions are the objects that end users can directly refer to for execution. Actions are grouped by controllers. The execution result of an action is the response that an end-user will receive.
+For the above view code to work, we need to create an action. Actions are the objects referred by the end users for execution. Actions are found in controllers. The execution result of an action is the response that an end-user will receive.
 
 To display the portfolio page, we need to declare an action to display the portfolio page. Open  `frontend/controllers/SiteController.php` and add the following:
 ```PHP
@@ -239,7 +240,7 @@ After creating the action and the view, you can access the new page by clicking 
 
 You should have a page similar to the one below;
 ![A congratulatory note](web.png)
-In Yii, all action methods are prefixed with the word action. This is how the framework differentiates action methods from non-action ones. If an action ID requires multiple words, then they will be concatenated by dashes.
+
 
 ### conclusion
 Congratulations! Now you have a better understanding of the basics of Yii 2 framework.
