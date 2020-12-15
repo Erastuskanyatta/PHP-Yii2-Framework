@@ -1,11 +1,11 @@
 ## Getting started with Yii 2 PHP Web framework.
  
-Nowadays, many developers have turned to use frameworks in designing websites. This has led to improved production speeds. PHP is a general-purpose scripting language used in web development. It is a server-side scripting language that is embedded in [HTML](https://en.wikipedia.org/wiki/HTML). It is used in managing dynamic content, databases, and session tracking. It can be integrated with databases like MySQL, PostgreSQL, and MongoDB to store user data.
+Nowadays, many developers have turned to use frameworks in designing websites. This has led to improved production speeds. PHP is  scripting language  used in web development. It is a server-side scripting language that is embedded in [HTML](https://en.wikipedia.org/wiki/HTML). It is used in managing dynamic content, databases, and session tracking. It can be integrated with databases like MySQL, PostgreSQL, and MongoDB to store user data.
 
 ## Introduction
 Yii 2 is a generic PHP framework used for developing web applications with multiple ties. Like other PHP frameworks, Yii 2 implements the MVC (Model, View, and Controller) development principle.
 
-MVC aims to separate business logic from user interface considerations so that developers can easily modify each part without affecting the other. To learn more on MVC click [here](https://www.guru99.com/php-mvc-frameworks.html).
+The work of the MVC is to help the web developers modify each part of the business logic easily without affecting the other. To learn more on MVC click [here](https://www.guru99.com/php-mvc-frameworks.html).
 
 ## Prerequisites
 To follow along with this tutorial, you are required to have the following:
@@ -13,7 +13,6 @@ To follow along with this tutorial, you are required to have the following:
 - knowledge of PHP, HTML, and CSS
 - Apache Web server. You can get it [here](https://www.apachefriends.org/download.html) to download and start the installation. After installation, a folder `/opt/lampp` will be created.
 
-<!-- We  will have `/htdocs` as a sub folder.Inside `/opt/lampp/htdocs`we will extract Yii 2 here after installation. -->
 ## step 1 -- install Yii 2
 Yii 2 can be installed from an archive file.
 
