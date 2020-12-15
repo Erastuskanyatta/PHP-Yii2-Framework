@@ -1,45 +1,45 @@
 ## Getting started with Yii 2 PHP Web framework.
  
-Nowadays, many developers have turned to using frameworks in designing websites. This has led to improved production speeds. PHP is a general-purpose scripting language especially used in web development. It is a server side scripting language that is embedded in [HTML](https://en.wikipedia.org/wiki/HTML). It is used in managing dynamic content, databases and session tracking. It can be integrated with databases like MySQL, PostgreSQL and Mongodb to store user data.
+Nowadays, many developers have turned to use frameworks in designing websites. This has led to improved production speeds. PHP is a general-purpose scripting language used in web development. It is a server-side scripting language that is embedded in [HTML](https://en.wikipedia.org/wiki/HTML). It is used in managing dynamic content, databases and, session tracking. It can be integrated with databases like MySQL, PostgreSQL and, Mongodb to store user data.
 
 ## Introduction
-Yii 2 is a generic PHP framework used for developing web applications with multiple ties. Like other PHP frameworks,Yii 2 implements the MVC (Model, View and Controller) development principle.
+Yii 2 is a generic PHP framework used for developing web applications with multiple ties. Like other PHP frameworks, Yii 2 implements the MVC (Model, View, and Controller) development principle.
 
-MVC aims to separate business logic from user interface considerations, so that developers can easily modify each part without affecting the other. To learn more on MVC click [here](https://www.guru99.com/php-mvc-frameworks.html).
+MVC aims to separate business logic from user interface considerations so that developers can easily modify each part without affecting the other. To learn more on MVC click [here](https://www.guru99.com/php-mvc-frameworks.html).
 
 ## Prerequisites
-To follow along with this tutorial,you are required to have the following:
+To follow along with this tutorial, you are required to have the following:
 - a code editor like [Visual Studio Code](https://code.visualstudio.com/download)
-- knowledge of PHP, HTML and CSS
-- Apache web server. You can get it [here](https://www.apachefriends.org/download.html) to download and start the installation. After installation, a folder `/opt/lampp` will be created.
+- knowledge of PHP, HTML, and CSS
+- Apache Web server. You can get it [here](https://www.apachefriends.org/download.html) to download and start the installation. After installation, a folder `/opt/lampp` will be created.
 
 <!-- We  will have `/htdocs` as a sub folder.Inside `/opt/lampp/htdocs`we will extract Yii 2 here after installation. -->
 ## step 1 -- install Yii 2
 Yii 2 can be installed from an archive file.
 
-This Involves the following steps"
+This involves the following steps"
 
 1. Download the archive file from [yiiframeworks.com](https://www.yiiframework.com/download) In our case we will download the advanced application template.
 
-2. Move the downloaded archive file to the `/htdocs` folder inside Xampp installation folder. In my case it is `/opt/lampp/htdocs`.
+2. Move the downloaded archive file to the `/htdocs` folder inside xampp installation folder. In my case it is `/opt/lampp/htdocs`.
 
 ```bash
 $ sudo mv yii-advanced-app-2.0.39.tgz /opt/xampp/htdocs
 ```
-3. Using terminal open the  `/opt/xampp/htdocs` and unzip the yii-2-advanced file.
+3. Using terminal open the  `/opt/xampp/htdocs` and unzip the Yii-2-advanced file.
 ```bash
-$ sudo tar-xvzf yii-advanced-app-2.0.39.tgz
+$ sudo tar-xvzf Yii-advanced-app-2.0.39.tgz
 ```
 For assistance with extracting tarball archives, click [here](https://askubuntu.com/questions/499807/how-to-unzip-tgz-file-using-the-terminal).
 
 4. Initialize your project by entering the following command.
 ```
-$ php init
+$ PHP init
 ```
 Then you will be asked which environment you want the application to be initialized in.
-Select 0 (Development) ,then Click Enter. It will again ask you for Yes/No .Type yes and click enter.
+Select 0 (Development) ,then click Enter. It will again ask you for Yes/No.Type yes and click enter.
 
-Now You are done with Installation of Yii2 Advanced Template.Open your browser and navigate, http://localhost/advanced/frontend/web to test it.
+Now You are done with installation of Yii 2 Advanced Template. Open your browser and navigate, http://localhost/advanced/frontend/web to test it.
 
 If the installation was successful you should see the Congratulations! page in your browser.
 
@@ -48,7 +48,7 @@ If the installation was successful you should see the Congratulations! page in y
 You can also learn how to configure your web server [here](https://www.php.net/manual/en/features.commandline.webserver.php).
  
 ### step 2--understanding the Folder Structure and directories
-Inside the `advanced` folder,we have the following folder structure:OPen the folder using your favorite code editor.
+Inside the `advanced` folder, we have the following folder structure: OPen the folder using your favorite code editor.
 ```bash
 .
 ├── backend
@@ -81,34 +81,34 @@ The backend directory serves the admin services which are restricted from the us
 Inside this `backend` folder, we have the following main directories.
 
 
-**`/assets`**: This directory consists of assets configurations. By default, it has an `AppAsset.php` file, which includes the configurations of the JAVASCRIPT and the CSS files. This is where we will be adding our CSS and JAVASCRIPT files.
+**`/assets`**: This directory consists of asset configurations. By default, it has an `AppAsset.php` file, which includes the configurations of the JAVASCRIPT and the CSS files. This is where we will be adding our CSS and JAVASCRIPT files.
 
 
-**`/controllers`**: Yii 2 contollers are written in this folder. Yii 2 follows the convention of <NameController> for naming the controllers. For example, `UserController.php` is the name of the file containing `User` controllers.
+**`/controllers`**: Yii 2 controller's are written in this folder. Yii 2 follows the convention of <NameController> for naming the controllers. For example, `UserController.php` is the name of the file containing `User` controllers.
 
 
-**`/models`**: Models are the classes which contain the 'business logic'. When we say business logic it's the processing of data, manipulating the values, etc. In Yii 2, this directory also has classes which are a link to the database through which we can access the database tables. These models and tables have one to one mapping.
+**`/models`**: Models are the classes which contains the 'business logic'. When we say business logic it's the processing of data, manipulating the values, etc. In Yii 2, this directory also has classes which are a link to the database through which we can access the database tables. These models and tables have one to one mapping.
 
-**`/views`**: Views store the files that are displayed via a browser. The data to be placed is passed from the controler in the view and then sent to the browser as HTML. 
+**`/views`**: Views store the files that are displayed via a browser. The data to be placed is passed from the controller in the view and then sent to the browser as HTML. 
 
-Inside views we have two directories:
+Inside view we have two directories:
 
-- **`views/layout`**: Layouts are a special type of views that represent the common parts of multiple views. For example, the pages for most Web applications share the same page header and footer. 
-Instead of repeating the same page header and the footer in every view,a better way is to do this layout embed the rendering result of a content view at an appropriate place in the layout. The files in this directory are under `main.php` folder.
+- **`views/layout`**: Layouts are a special type of view that represents the common parts of multiple views. For example, the pages for most Web applications share the same page header and footer. 
+Instead of repeating the same page header and the footer in every view, a better way is to do this layout embed the rendering result of a content view at an appropriate place in the layout. The files in this directory are under `main.php` folder.
 
-- **`views/site`**: Unlike files in layout,files in site are not fixed.That is,one page does not have the same view with another page.The only similar thing is the header and the footer since they were placed in `main.php`.
+- **`views/site`**: Unlike files in layout, files in site are not fixed. That is, one page does not have the same view to another page. The only similar thing is the header and the footer since they were placed in `main.php`.
 
 ### Folder 2: common
-In this directory we have configurations which are used in the backend and the frontend projects. For example, you can have database configurations in `/common/config`.
+In this directory, we have configurations that are used in the backend and the frontend projects. For example, you can have database configurations in `/common/config`.
 
 ### Folder 3: frontend
 
 The `/frontend` project contains the contents displayed to the users. This folder has similar directories to those of `/backend`.
 
-## Step 3--Creating our first web application using yii 
+## Step 3--Creating our first web application using Yii 2
 Now that we have the default Yii 2 template running, all we have to do is modify the different parts of our website to fit our preferences. Let us modify the footer of our website. Replace the whole `<footer>` in `/frontend/views/layout/main.php` with the following code:
 
-```php
+```PHP
 // ...
 <footer class="footer">
     <div class="container">
@@ -168,8 +168,8 @@ Then register the styles above in `assets/AppAsset.php`.
 ### Modifying site contents
 Now let us modify the contents of our website. Replace the contents of `frontend/views/site/index.php` with the following code:
 
-```php
-<?php
+```PHP
+<?PHP
 
 /* @var $this yii\web\View */
 
@@ -185,7 +185,7 @@ $this->title = 'My Website';
     </div>
 </div>
 ```
-The code above replaces the default homepage content with some a bootstrap jumbotron. We also add a link that points to a portfolio page using PHP url manager. The url Manager is used to link pages throughout Yii 2 framework. On clicking the link you get a 404 error as the portfolio page does not exist. Let us now create the portfolio page.
+The code above replaces the default homepage content with bootstrap jumbotron. We also add a link that points to a portfolio page using PHP URL manager. The URL Manager is used to link pages throughout Yii 2 framework. On clicking the link you get a 404 error as the portfolio page does not exist. Let us now create the portfolio page.
 
 ### Adding a new page to our website
 To add a new page to our website, we need to create a view and an action. A view is the code that will be displayed in the browser. Create a new file `frontend/views/site/portfolio.php` and put the following code:
@@ -210,11 +210,11 @@ To add a new page to our website, we need to create a view and an action. A view
 </body>
 </html>
 ```
-For the above view code to work, we need to create an action. Actions are the objects that end users can directly refer to for execution. Actions are grouped by controllers. The execution result of an action is the response that an end user will receive.
+For the above view code to work, we need to create an action. Actions are the objects that end users can directly refer to for execution. Actions are grouped by controllers. The execution result of an action is the response that an end-user will receive.
 
 To display the portfolio page, we need to declare an action to display the portfolio page. Open  `frontend/controllers/SiteController.php` and add the following:
-```php
-<?php
+```PHP
+<?PHP
 // ...
 class SiteController extends Controller
 {
@@ -243,10 +243,10 @@ In Yii, all action methods are prefixed with the word action. This is how the fr
 ### conclusion
 Congratulations! Now you have a better understanding of the basics of Yii 2 framework.
 Yii 2 pushes you to create securable and testable site by doing a lot of the heavy lifting for you.
-I really encourage you to use Yii 2 in your next project..
+I encourage you to use Yii 2 in your next project.
 In this article;
-- we have installed yii2 framework.
-- we have looked at yii2 directories.
+- we have installed Yii 2 framework.
+- we have looked at Yii 2 directories.
 - we have created a portfolio page using yii2.
 
 **Have a good Yii 2 coding ahead**
