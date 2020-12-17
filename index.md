@@ -1,36 +1,36 @@
 
 ## Getting started with Yii 2 PHP Web framework.
  
-Nowadays, many developers have turned to use frameworks in designing websites. This has led to improved production speeds. PHP is a scripting language used in web development. It is a server-side scripting language that is embedded in [HTML](https://en.wikipedia.org/wiki/HTML). It is used in managing dynamic content, databases, and session tracking. It can be integrated with databases like MySQL, PostgreSQL, and MongoDB to store user data.
+Nowadays, many developers have turned to use frameworks in designing websites. This has led to improved production speeds. PHP is a scripting language used in web development. It is a server-side scripting language  embedded in [HTML](https://en.wikipedia.org/wiki/HTML). 
 
 ## Introduction
-Yii 2 is a generic PHP framework used for developing web applications with multiple ties. Like other PHP frameworks, Yii 2 implements the MVC (Model, View, and Controller) development principle.
+Yii 2 is a generic PHP framework used for developing web applications with many ties. Yii 2 implements the MVC (Model, View, and Controller) development principle.
 
-The work of the MVC is to help the web developers modify each part of the business logic easily without affecting the other. To learn more on MVC click [here](https://www.guru99.com/php-mvc-frameworks.html).
+Model, View, and Controller help web developers work with a single part of the website at a time. To learn more on MVC click [here](https://www.guru99.com/php-mvc-frameworks.html).
 
 ## Prerequisites
-To follow along with this tutorial, you are required to have the following:
+To follow along with this tutorial, you need to have the following:
 - a code editor like [Visual Studio Code](https://code.visualstudio.com/download)
 - knowledge of PHP, HTML, and CSS
-- Apache Web server. You can get it [here](https://www.apachefriends.org/download.html) to download and start the installation. After installation, a folder `/opt/lampp` will be created.
+- Apache Web server. Download it [here](https://www.apachefriends.org/download.html). After installation, a folder `/opt/lampp` will be created.
 
 ## step 1 -- install Yii 2
 Yii 2 can be installed from an archive file.
 
 This involves the following steps"
 
-1. Download the archive file from [yiiframeworks.com](https://www.yiiframework.com/download) In our case we will download the advanced application template.
+1. Downloading the archive file from [yiiframeworks.com](https://www.yiiframework.com/download). Download the advanced application template.
 
-2. Move the downloaded archive file to the `/htdocs` folder inside xampp installation folder. In my case it is `/opt/lampp/htdocs`.
+2. Move the downloaded archive file to the `/htdocs` folder inside  xampp installation folder. In my case it is `/opt/lampp/htdocs`.
 
 ```bash
 $ sudo mv yii-advanced-app-2.0.39.tgz /opt/xampp/htdocs
 ```
-3. Using terminal open the  `/opt/xampp/htdocs` and unzip the Yii-2-advanced file.
+3. Using the terminal open the  `/opt/xampp/htdocs` and unzip the Yii-2-advanced file.
 ```bash
 $ sudo tar-xvzf Yii-advanced-app-2.0.39.tgz
 ```
-For assistance with extracting tarball archives, click [here](https://askubuntu.com/questions/499807/how-to-unzip-tgz-file-using-the-terminal).
+Click [here](https://askubuntu.com/questions/499807/how-to-unzip-tgz-file-using-the-terminal) if you encounter any problem. 
 
 4. Initialize your project by entering the following command.
 ```
@@ -45,10 +45,10 @@ If you see the Congratulations! page in your browser, it means that the installa
 
 ![A congratulatory note](congratulations.png)
 
-You can also learn how to configure your web server [here](https://www.php.net/manual/en/features.commandline.webserver.php).
- 
+
 ### step 2--understanding the Folder Structure and directories
-Inside the `advanced` folder, we have the following folder structure: OPen the folder using your favorite code editor.
+Below are the folders inside the `advanced`. Open `/opt/lampp/htdocs/advanced` folder using your favorite code editor to see them.
+
 ```bash
 .
 ├── backend
@@ -87,28 +87,27 @@ Inside this `backend` folder, we have the following main directories.
 **`/controllers`**: Yii 2 Controller is written in this folder. Yii 2 takes the convention of <NameController> to name the controllers. For example, `UserController.php` is the name of the file containing `User` controllers.
 
 
-**`/models`**: In Yii 2, processing of data, and manipulating the values takes place here. In this directory, we have classes that link to the databases hence accessing the database tables. Tables in databases and the models have one to one mapping.
+**`/models`**: In Yii 2, processing of data, and manipulating the values takes place here. In this directory, we have classes that link to the databases. Tables in databases and the models have one to one mapping.
 
 
-**`/views`**: In Yii 2, views directory is used to store files that will be displayed in the browser as HTML. The code placed in this directory is always in PHP format but displayed in the browser in HTML format.
+**`/views`**: In Yii 2, the views directory is used to store files that will be displayed in the browser as HTML. The code placed in this directory is always in PHP format but displayed in the browser in HTML format.
 
 Inside view we have two directories:
 
-- **`views/layout`**: Layout directory contains the views that are fixed in the browser. These views get displayed on all pages of the website. The files in this folder are under `main.php`. For instance, page header and the footer files are in this directory hence all pages in that web contain the same page header and the footer view.
-<!-- Layouts are a special type of view that represents the common parts of multiple views. For example, the pages for most Web applications share the same page header and footer. 
-Instead of repeating the same page header and the footer in every view, a better way is to do this layout embed the rendering result of a content view at an appropriate place in the layout. The files in this directory are under `main.php` folder. -->
+- **`views/layout`**: The layout directory contains the views that are fixed in the browser. These views get displayed on all pages of the website. The files in this folder are under `main.php`. For instance, the most website has footer and header files placed in this directory. So, all pages on that website contain a similar footer and header.
 
 - **`views/site`**: Unlike files in layout, files in the site are not fixed. That is, one page does not have the same view as another page. The only similar thing is the header and the footer since they were placed in `main.php`.
 
 ### Folder 2: common
-In this directory, we have configurations that are used in the backend and the frontend projects. For instance, database configurations in `/common/config` takes place here.
+This directory contains the files that are shared among applications. For instance, database configurations in `/common/config` takes place here.
 
 ### Folder 3: frontend
 
 The `/frontend` project contains the contents displayed to the users. This folder has similar directories to those of `/backend`.
 
 ## Step 3--Creating our first web application using Yii 2
-Now that we have the default Yii 2 template running, all we have to do is modify the different parts of our website to fit our preferences. Let us modify the footer of our website. Replace the whole `<footer>` in `/frontend/views/layout/main.php` with the following code:
+
+To create a web page, we need to change the different parts of our website to fit our preferences. Let us change the footer of our website. Replace the whole `<footer>` in `/frontend/views/layout/main.php` with the following code:
 
 ```PHP
 // ...
@@ -136,7 +135,7 @@ Now that we have the default Yii 2 template running, all we have to do is modify
 
 ```
 ### Step 4 -- Configure CSS and JavaScript
-All CSS files in a project are stored under `/web/css` and all JavaScript are stored under `/web/js`. 
+All CSS files in a project are stored under `/web/CSS` and all JavaScript is stored under `/web/js`. 
 
 Let us customize the footer we created above. Create a `footer.css` under `/web/css` and put the code below. 
 ```css
@@ -168,7 +167,7 @@ Then register the styles above in `assets/AppAsset.php`.
 }
 ```
 ### Modifying site contents
-Now let us modify the contents of our website. Replace the contents of `frontend/views/site/index.php` with the following code:
+Now let us change the contents of our website. Replace the contents of `frontend/views/site/index.php` with the following code:
 
 ```PHP
 <?PHP
@@ -187,7 +186,7 @@ $this->title = 'My Website';
     </div>
 </div>
 ```
-The code above replaces the default homepage content with bootstrap jumbotron. We also add a link that points to a portfolio page using PHP URL manager. The URL Manager is used to link pages throughout Yii 2 framework. On clicking the link you get a 404 error as the portfolio page does not exist. Let us now create the portfolio page.
+The code above replaces the default homepage content with bootstrap jumbotron. We also add a link that points to a portfolio page using the PHP URL manager. The URL Manager is used to link pages throughout Yii 2 framework. On clicking the link you get a 404 error as the portfolio page does not exist. Let us now create the portfolio page.
 
 ### Adding a new page to our website
 To add a new page to our website, we need to create a view and an action. A view is the code that will be displayed in the browser. Create a new file `frontend/views/site/portfolio.php` and put the following code:
@@ -196,23 +195,23 @@ To add a new page to our website, we need to create a view and an action. A view
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Portfolio</title>
+    <title>Portfolio</title>
 </head>
 <body>
      <h1 style="text-align: center">This is the portfolio page</h1>
      <div class="container">
-     	<div class="col-sm-4">
-     		<div class="title">
-     			<h6>About Me</h6>
-     		</div>
-     		<div>I am a student.</div>
-     	</div>
+        <div class="col-sm-4">
+            <div class="title">
+                <h6>About Me</h6>
+            </div>
+            <div>I am a student.</div>
+        </div>
      </div>
      
 </body>
 </html>
 ```
-For the above view code to work, we need to create an action. Actions are the objects referred by the end users for execution. Actions are found in controllers. The execution result of an action is the response that an end-user will receive.
+For the above view code to work, we need to create an action. Actions are the objects referred by the end-users for execution. Actions are found in controllers. The execution result of an action is the response that an end-user will receive.
 
 To display the portfolio page, we need to declare an action to display the portfolio page. Open  `frontend/controllers/SiteController.php` and add the following:
 ```PHP
@@ -238,13 +237,13 @@ class SiteController extends Controller
 ```
 After creating the action and the view, you can access the new page by clicking on "Portfolio" on the main page.
 
-You should have a page similar to the one below;
+You should have a page like the one below;
 ![A congratulatory note](web.png)
 
 
 ### conclusion
-Congratulations! Now you have a better understanding of the basics of Yii 2 framework.
-Yii 2 pushes you to create securable and testable site by doing a lot of the heavy lifting for you.
+Congratulations! Now you have a better understanding of the basics of the Yii 2 framework.
+Yii 2 pushes you to create a securable and testable site by doing a lot of the heavy lifting for you.
 I encourage you to use Yii 2 in your next project.
 In this article;
 - we have installed Yii 2 framework.
